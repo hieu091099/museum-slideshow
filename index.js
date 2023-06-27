@@ -411,3 +411,30 @@ function activeTab(evt, tabId) {
   document.getElementById(tabId).classList.add("active");
   evt.currentTarget.className += " active";
 }
+function transfer() {
+  document.getElementById("main").style.display = "block";
+  document.getElementById("background").style.display = "none";
+}
+
+document.getElementById("background").addEventListener("click", function () {
+  this.style.opacity = "0";
+  document.getElementById("main").classList.remove("hidden");
+  document.getElementById("background").classList.add("hidden");
+
+  setTimeout(function () {
+    fadeIn("main");
+  }, 50);
+});
+
+function fadeIn(elementId) {
+  let element = document.getElementById(elementId);
+  let opacity = 0;
+  let interval = setInterval(function () {
+    if (opacity < 1) {
+      opacity += 0.1;
+      element.style.opacity = opacity;
+    } else {
+      clearInterval(interval);
+    }
+  }, 50);
+}
