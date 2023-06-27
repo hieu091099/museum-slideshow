@@ -11,13 +11,19 @@
   <body>
     <div class="background" id="background"></div>
     <div class="container hidden" id="main">
-      <section id="main-slider" class="splide" aria-label="My Awesome Gallery">
-        <div class="splide__track">
-          <ul class="splide__list" id="content"></ul>
-        </div>
-      </section>
+      <div class="carousel">
+        <section
+          id="main-slider"
+          class="splide"
+          aria-label="My Awesome Gallery"
+        >
+          <div class="splide__track">
+            <ul class="splide__list" id="content"></ul>
+          </div>
+        </section>
 
-      <ul id="thumbnails" class="thumbnails"></ul>
+        <ul id="thumbnails" class="thumbnails"></ul>
+      </div>
     </div>
 
     <script src="./libary/splide-4.1.3/js/splide.min.js"></script>

@@ -145,7 +145,7 @@ for (let index in data) {
   }
 
   htmlString += `  <li class="splide__slide" >
-  <h1>戰國中期 嵌綠松石金屬絲犧尊</h1>
+  <h1>${data[index].title}</h1>
   <div class="flex">
     <div class="col">
         <div class="tab">
@@ -154,7 +154,7 @@ for (let index in data) {
         </div>
         <div id="3D${index}" class="tabcontent active">
             <iframe
-            style="width: 100%; height: 70vh"
+            style="width: 100%; height: 50vh"
             src="${data[index].url}"
             frameborder="0"
          ></iframe>
@@ -211,7 +211,7 @@ thumbnail.innerHTML = thumbnailString;
 /** MAIN SLIDE */
 let splide = new Splide("#main-slider", {
   width: "95%",
-  height: "80vh",
+  height: "50vh",
   interval: 5000,
   perPage: 1,
   autoplay: true,
