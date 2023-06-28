@@ -203,6 +203,8 @@ let splide = new Splide("#main-slider", {
   autoplay: true,
   pagination: false,
   arrows: true,
+  rewind: true,
+  rewindSpeed: 1000,
 });
 
 let thumbnails = document.getElementsByClassName("thumbnail");
