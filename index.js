@@ -409,10 +409,6 @@ function backHome() {
     fadeIn("background");
   }, 50);
 }
-document.getElementById("background").addEventListener("click", function () {
-  this.style.opacity = "0";
-  this.style.display = "none";
-});
 
 function fadeIn(elementId) {
   let element = document.getElementById(elementId);
