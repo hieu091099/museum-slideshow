@@ -147,7 +147,7 @@ for (let index in data) {
   htmlString += `  <li class="splide__slide" >
   <h1>${data[index].title}</h1>
   <div class="flex">
-    <div class="col">
+    <div class="col" style="width:60%">
         <div class="tab">
             <button class="tablinks active" tab-id="3D${index}" onclick="activeTab(event, '3D${index}')">3D</button>
             <button class="tablinks" tab-id="2D${index}" onclick="activeTab(event, '2D${index}')">2D</button>
@@ -174,8 +174,9 @@ for (let index in data) {
             </ul>
         </div>
     </div>
-    <div class="col">
-      <div>
+    <div class="col" style="width:40%">
+      <div style="cursor: 'pointer';" onclick="backHome()">
+       <div class="back-home">回首頁</div>
        ${informationString}
       </div>
       <div class="article">
@@ -187,26 +188,11 @@ for (let index in data) {
     </div>
   </div>
 </li>`;
-
-  thumbnailString += `<li class="thumbnail">
-          <img
-          src="${data[index].previewImage}"
-          alt=""
-          />
-          </li>`;
-  //   thumbnailString += `<li class="thumbnail">
-  //       <iframe
-
-  //       src="${data[item].url}"
-  //       frameborder="0"
-  //     ></iframe>
-  //         </li>`;
 }
 
 let content = document.querySelector("#content");
-let thumbnail = document.querySelector("#thumbnails");
+
 content.innerHTML = htmlString;
-thumbnail.innerHTML = thumbnailString;
 
 /** MAIN SLIDE */
 let splide = new Splide("#main-slider", {
@@ -216,7 +202,7 @@ let splide = new Splide("#main-slider", {
   perPage: 1,
   autoplay: true,
   pagination: false,
-  arrows: false,
+  arrows: true,
 });
 
 let thumbnails = document.getElementsByClassName("thumbnail");
@@ -411,11 +397,15 @@ function activeTab(evt, tabId) {
   document.getElementById(tabId).classList.add("active");
   evt.currentTarget.className += " active";
 }
-function transfer() {
-  document.getElementById("main").style.display = "block";
-  document.getElementById("background").style.display = "none";
-}
 
+function backHome() {
+  document.getElementById("main").classList.add("hidden");
+  document.getElementById("background").classList.remove("hidden");
+
+  setTimeout(function () {
+    fadeIn("background");
+  }, 50);
+}
 document.getElementById("background").addEventListener("click", function () {
   this.style.opacity = "0";
   document.getElementById("main").classList.remove("hidden");
