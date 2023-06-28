@@ -199,6 +199,7 @@ let splide = new Splide("#main-slider", {
   width: "95%",
   height: "50vh",
   interval: 5000,
+  index: 2,
   perPage: 1,
   autoplay: true,
   pagination: false,
@@ -403,19 +404,14 @@ function activeTab(evt, tabId) {
 function backHome() {
   document.getElementById("main").classList.add("hidden");
   document.getElementById("background").classList.remove("hidden");
-
+  document.getElementById("background").style.display = "flex";
   setTimeout(function () {
     fadeIn("background");
   }, 50);
 }
 document.getElementById("background").addEventListener("click", function () {
   this.style.opacity = "0";
-  document.getElementById("main").classList.remove("hidden");
-  document.getElementById("background").classList.add("hidden");
-
-  setTimeout(function () {
-    fadeIn("main");
-  }, 50);
+  this.style.display = "none";
 });
 
 function fadeIn(elementId) {
@@ -429,4 +425,17 @@ function fadeIn(elementId) {
       clearInterval(interval);
     }
   }, 50);
+}
+
+function transfer(item) {
+  document.getElementById("background").style.display = "none";
+  document.getElementById("background").style.opacity = "0";
+  document.getElementById("main").classList.remove("hidden");
+  document.getElementById("background").classList.add("hidden");
+
+  setTimeout(function () {
+    fadeIn("main");
+  }, 50);
+
+  splide.go(item - 1);
 }

@@ -30,12 +30,30 @@ dt {
 }
 
 #background {
-  cursor: pointer;
   height: 100vh;
   background-image: url("./images/\(50\)3D觸控螢幕_0628_首頁.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  display: flex;
+  align-items: flex-end;
+}
+.item-wrapper {
+  width: 100%;
+  height: 600px;
+}
+.item-row {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+.item {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  cursor: pointer;
 }
 .carousel {
   height: calc(100% - 20px);
