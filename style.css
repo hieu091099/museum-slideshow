@@ -47,6 +47,8 @@ dt {
   text-align: center;
   font-size: 2rem;
   color: #c6a868;
+  margin-left: 60px;
+  margin-bottom: 20px;
 }
 .hidden {
   display: none;
