@@ -175,16 +175,16 @@ for (let index in data) {
         </div>
     </div>
     <div class="col" style="width:40%">
-      <div style="cursor: 'pointer';" onclick="backHome()">
-       <div class="back-home">回首頁</div>
-       ${informationString}
-      </div>
-      <div class="article">
-        <h2 class="article-title">${introductionKeys[0]}</h2>
-        <p>
-          ${introduction[introductionKeys[0]]}
-        </p>
-      </div>
+        <div>
+        ${informationString}
+        </div>
+        <div class="article">
+          <h2 class="article-title">${introductionKeys[0]}</h2>
+          <p>
+            ${introduction[introductionKeys[0]]}
+          </p>
+        </div>
+        <div class="back-home" onclick="backHome()"><img src="./images/Back2Home_回首頁.png"/></div>
     </div>
   </div>
 </li>`;
@@ -203,8 +203,9 @@ let splide = new Splide("#main-slider", {
   perPage: 1,
   autoplay: true,
   pagination: false,
-  arrows: true,
+  arrows: false,
   rewind: true,
+  rewindByDrag: true,
   rewindSpeed: 1000,
 });
 
