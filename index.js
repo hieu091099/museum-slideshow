@@ -201,7 +201,6 @@ let splide = new Splide("#main-slider", {
   interval: 5000,
   index: 2,
   perPage: 1,
-  autoplay: true,
   pagination: false,
   arrows: false,
   rewind: true,
